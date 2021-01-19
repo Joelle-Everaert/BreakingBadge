@@ -9,13 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-
     <title>Breaking Badge</title>
-    <link rel="stylesheet" href="/template/assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
   </head>
 
-  <body>
+  <body class="loginpagebody">
     <section class="Form my-4 mx-5">
       <div class="container-fluid">
         <div class="row no-gutters">
