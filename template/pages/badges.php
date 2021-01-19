@@ -3,7 +3,12 @@
 <?php
 //importer fonction
 
-$badge= getBadges()
+$badges = getBadges();
+while($badge = $badges->fetch()){
+    echo "<pre>";
+    print_r($badge);
+    echo "</pre>";
+}
 
 //boucle pour les afficher
 ?>

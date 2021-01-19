@@ -1,10 +1,11 @@
 <?php
+
 include_once('components/functions.php');
 
 if(!empty($_POST['email'])){
     if(login($_POST['email'], $_POST['password'])){
         if(isAdmin()){
-            header("Location: ?p=adminDash");
+            header("Location: ?p=dashboard");
         }else{
             header("Location: ?p=dashboard");
         }
