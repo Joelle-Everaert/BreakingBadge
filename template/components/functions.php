@@ -1,7 +1,6 @@
 <?php
   include_once('db.php');
 
-
   // Similar to "include_once" but for sessions
   // Calls "session_start()" unless it has already been called on the page
   function session_start_once(){
@@ -24,11 +23,13 @@
     session_start_once();
 
     $cursor = createCursor();
-    $query = $cursor->prepare('SELECT id, password from users WHERE email=?');
-    $query->execute([$email]);
+    $query = $cursor->prepare('SELECT id, password, account_type from users WHERE email=?');
+    $query->execute([
+      $email
+      ]);
     $results = $query->fetch();
     
-    if(password_verify($password, $results['password'])){
+    if(!empty($results) AND password_verify($password, $results['password'])){
       $_SESSION['user_id'] = $results['id'];
       $_SESSION['account_type'] = $results['account_type'];
       $_SESSION['email'] = $email;
