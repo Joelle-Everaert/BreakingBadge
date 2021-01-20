@@ -5,6 +5,9 @@
   $routes['dashboard'] = 'Dashboard';
   $routes['badges'] = 'All badges';
   $routes['students'] = 'All students';
+  $routes['logout'] = 'Log out';
+
+  // include_once('navbar.php');
 
   $requestedPage = 'dashboard';
 
@@ -14,16 +17,18 @@
 
   if(!isAuthenticated()){
     // include the login page
-    include ('./pages/login.php');
-  }
+    include('./pages/login.php');
 
-  else if(isAuthenticated()){
+    
+  }else if(isAuthenticated()){
+
     if(array_key_exists($requestedPage, $routes)){
-      header('locaiton: ./pages/' . $requestedPage . '.php');
-      include_once('navbar.php');
-      // include the page
+    
+    include_once('navbar.php');
+    include('pages/' .$requestedPage. '.php');
     }
-    echo $requestedPage;
   }
-  
+    
+ 
+  // print_r($_SESSION);
 ?>

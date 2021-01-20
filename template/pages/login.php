@@ -1,23 +1,12 @@
 <?php
+include_once('components/functions.php');
 
-require_once('components/functions.php');
-
-if (!empty($_POST['email'])){
+if(!empty($_POST['email'])){
     if(login($_POST['email'], $_POST['password'])){
-        if(isAdmin()){
-            echo 'hello admin';
-        }
-        else {
-            echo 'hello normie';
-        }
-    } else {
-        echo 'not connected';
-    }
+            header("Location: ?p=dashboard");
+    };
 }
-
-
 ?>
-
 
 <form method="post">
 <label for="email">Email Address</label>
@@ -29,6 +18,5 @@ if (!empty($_POST['email'])){
 <br>
 <input type="password" name="password">
 <br>
-
 <input type="submit" name="submit" value="Submit">
 </form>
