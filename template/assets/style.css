@@ -55,8 +55,28 @@ img {
 
 /* ----------------------- ADD A BADGE PAGE ---------------------------------*/
 
-h1.addbadgeh1 {
+h2.addbadgeh2 {
 color: white;
 padding-left: 40%;
 padding-top: 10%;
+padding-bottom: 5%;
+font-family: 'Montserrat', sans-serif;
 }
+
+.addabadge {
+    width: 75%;
+    padding-left: 25%;
+}
+
+
+h3.addbadgeh3 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    padding-top: 5%;
+    padding-left: 10%;
+}
+
+.Titleofthelabels {
+    color: white;
+}
+
