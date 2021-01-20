@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include_once('./components/functions.php')
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,6 @@
   <title>Breaking Badge</title>
 </head>
 <body>
-  <?php include_once('components/router.php'); ?>
+<?php include_once('components/router.php'); ?>
 </body>
 </html>

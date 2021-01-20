@@ -12,8 +12,13 @@
 
   function isAuthenticated(){
     session_start_once();
-    return !empty($_SESSION['id']);
-  }
+    if(!empty($_SESSION['user_id'])){
+      return true;
+    }else{
+      return false;
+    }
+}
+
 
   function isAdmin(){
     session_start_once();
@@ -24,12 +29,13 @@
     session_start_once();
 
     $cursor = createCursor();
-    $query = $cursor->prepare('SELECT id, password from users WHERE email=?');
+    $query = $cursor->prepare('SELECT id, password, firstname, account_type from users WHERE email=?');
     $query->execute([$email]);
     $results = $query->fetch();
     
-    if(password_verify($password, $results['password'])){
+    if(!empty($results) AND password_verify($password, $results['password'])){
       $_SESSION['user_id'] = $results['id'];
+      // $_SESSION['firstname'] = $results['firstanme'];
       $_SESSION['account_type'] = $results['account_type'];
       $_SESSION['email'] = $email;
 
@@ -44,23 +50,80 @@
   }
 
   function getBadges(){
-
+    $bdd = createCursor();
+    $badges = $bdd->query('SELECT name, description, shape, color from badges');
+    
+    return $badges;
   }
 
   function getUsers(){
-
+    $bdd = createCursor();
+    $users = $bdd->query('SELECT firstname, lastname, email FROM users');
+    return $users;
   }
 
-  function createBadge(){
-
+// AFFICHER LES USERS AVEC ACCOUNT SPECIFIQUE
+  function getUserNormie(){
+    $bdd = createCursor();
+    $userNormie = $bdd->query('SELECT firstname, lastname, email FROM users WHERE account_type = "NORMIE"');
+    return $userNormie;
   }
 
-  function editBadge($badge_id){
 
+// FONCTION CREER UTILISATEURS + CONNEXION BDD
+  // function createUser($firstname, $lastname, $email, $password){
+  //   $password = password_hash($password, PASSWORD_DEFAULT);
+  //   $bdd=createCursor();
+  //   try {
+  //     $req = $bdd->prepare('INSERT INTO users(firstname, lastname, email, password) VALUES(?, ?, ?, ?)');
+  //     $req->execute([
+  //       $firstname,
+  //       $lastname,
+  //       $email,
+  //       $password
+  //     ]);
+  //   } catch (Exception $e) {
+  //     echo "This email is already in use";
+  //   } 
+  // }
+
+  
+  function createBadge($name, $description, $shape, $color){
+      $bdd = createCursor();
+      $req = $bdd->prepare('INSERT INTO badges(name, description, shape, color) VALUES(?, ?, ?, ?, ?)');
+      $newBadge = $req->execute([
+        $name,
+        $description,
+        $shape,
+        $color
+      ]);
+  
+      return $newBadge;
+    }
+  
+    // DEMANDER A GUILLAUME
+  function editBadge($badge_id, $name, $description, $shape, $color){
+    $bdd = createCursor();
+    $req = $bdd->prepare('UPDATE badges SET name = ?, description=?, shape=?, color=? WHERE id=?');
+    $updateBadge = $req->execute([
+      $name,
+      $description,
+      $shape,
+      $color,
+      $badge_id
+    ]);
+
+    return $updateBadge;
+    
   }
 
   function removeBadge($badge_id){
-
+    $bdd=createCursor();
+    $req = $bdd->prepare('DELETE FROM badges WHERE id=?');
+    $removeBadge = $req->execute([
+      $badge_id,
+    ]);
+    return $removeBadge;
   }
 
   function grantBadgeToUser($badge_id, $user_id){
