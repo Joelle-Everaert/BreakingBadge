@@ -11,7 +11,7 @@ include('includes/connexion.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN</title>
+    <title>USER</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -27,7 +27,7 @@ include('includes/connexion.php');
         <a class="d-flex navbar-brand" href="#">
             <img id="img_profile" src="../assets/img/clipart.png" width="100" height="100"
                 class="mb-4 d-inline-block align-top" alt="img" loading="lazy">
-            <h1 class="jello-horizontal titre_h1 ml-4">ADMIN PROFILE</h1>
+            <h1 class="jello-horizontal titre_h1 ml-4">USER PROFILE</h1>
         </a>
         <form class="form-inline">
             <button type="submit" name="out" value="Deconnexion" class="btn  btn-dark"><a href="./logOut.php">Logout
@@ -35,120 +35,41 @@ include('includes/connexion.php');
         </form>
     </nav>
 
-    <!---------------------------------- All user ------------------------------------------->
+    <!---------------------------------- Information ------------------------------------------->
 
     <div class="row mx-auto">
         <div class="animationSpawn col-lg-5 mb-5">
 
-            <h2 class="titre_h2 text-center">All users </h2>
+            <h2 class="titre_h2 text-center">Information</h2>
 
-            <div class='info tableBadge' style="overflow-y:auto; max-height: 42vh;">
-                <table class=" table table-dark table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+            <div class="cadre info container py-5">
+                <div class="row mx-auto">
+                    <div class="col-12 col-md-5"><img src="../assets/img/joker.jpg" width="250" height="300" alt="">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="col-lg-2 mt-5"> Name: ????????????????????????????</div>
+                        <div class="col-lg-2 mt-5"> FirstName: ???????????????????????????? </div>
+                        <div class="col-lg-2 mt-5"> Email: ????????????????????????????</div>
+                    </div>
 
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-
-                    </tbody>
-                </table>
+                </div>
 
             </div>
-
-            <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
-                <button type="submit" name="out" value="Deconnexion" class="btn  btn-dark"><a href="./logOut.php">Add users
-                    </a> <i class="fas fa-sign-out-alt"></i></button>
-            </form>
         </div>
 
-         <!---------------------------------- Barre_vertical ------------------------------------------->
-
+        <!---------------------------------- Barre_vertical ------------------------------------------->
+        
         <div class="d-none d-lg-block col-lg-2">
             <h2 class="barre_vertical text-center"></h2>
         </div>
 
-        <!---------------------------------- Liste badge ------------------------------------------->
+        <!---------------------------------- Acquired badge ------------------------------------------->
 
         <div class="animationSpawn col-12 col-xl-5">
 
-            <h2 class="titre_h2 text-center">Liste badge</h2>
+            <h2 class="titre_h2 text-center">Acquired badge</h2>
 
-            
+           
                 <div class='info tableBadge' style="overflow-y:auto; max-height: 42vh;">
                     <table class=" table table-dark table-striped">
                         <thead>
@@ -236,18 +157,16 @@ include('includes/connexion.php');
                     </table>
 
                 </div>
-                
         </div>
+
 
         <footer class="animationSpawn fixed-bottom text-center">
         <div class="container">
-
+            <h1>Progression Badge</h1>
             
-            <!--<h1>Progression Badge</h1>
-            
-             <div class="progress mb-5">
+            <div class="progress mb-5">
                 <div class="progress-bar progress-bar-striped progress-bar-animated w-25 bg-dark" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-            </div> -->
+            </div>
         </div>
         </footer>
 

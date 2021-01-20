@@ -1,11 +1,28 @@
 /* wassim */
 h1 {
-
   color: white !important;
+  
 }
 
 button {
   margin-bottom: 5vh !important;
+
+}
+
+img {
+  border-radius: 8%;
+
+}
+
+button:hover{
+  background-color:#3E444A !important;  
+  color: rgb(255, 0, 0) !important;
+}
+
+a{
+  text-decoration: none !important;
+  color: white !important;
+
 }
 
 body {
@@ -14,7 +31,6 @@ body {
   color: white !important;
   background-color: grey !important;
   
-
 }
 
 .cadre {
@@ -23,6 +39,7 @@ body {
 
   border-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(19, 6, 0, 1) 35%, rgba(222, 219, 219, 1) 100%);
   border-image-slice: 1;
+
 }
 
 nav {
@@ -33,21 +50,14 @@ nav {
 
 }
 
-.info,
-.badge {
-  padding-top: 10vh;
-
+.info {
   background: #383838;
   box-shadow: 5px 5px 0px #161616;
 
 }
 
-img {
-  border-radius: 8%;
-}
-
 .barre_vertical {
-  height: 60vh;
+  height: 55vh;
   margin: 30px 142px 30px 0;
   border-right: 2px solid black;
 
@@ -55,10 +65,10 @@ img {
 
 .titre_h1 {
   margin-top: 4vh;
+
 }
 
 .titre_h2 {
-
   padding: 20px 0 20px 0;
   margin-bottom: 4%;
   background-color: red;
@@ -66,24 +76,31 @@ img {
   background: #383838;
   box-shadow: 5px 5px 0px #161616;
 
-
 }
+
+.tableBadge::-webkit-scrollbar{
+  display: none;
+  
+
+} 
 
 .footer {
- 
-  bottom: 0;
   padding-bottom: 50px;
-  width: 100%;
 
 }
 
-.footer_p {}
+label {
+  padding-right: 10px;
+  font-size: 1rem;
+}
+
 
 
 /*---------------------------------------( Animation )----------------------------------------------------*/
 .animationSpawn {
   -webkit-animation: animationSpawn 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   animation: animationSpawn 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
 }
 
 @-webkit-keyframes animationSpawn {
