@@ -52,7 +52,7 @@
 
   function getBadges(){
     $bdd = createCursor();
-    $badges = $bdd->query('SELECT name, description, shape, color from badges');
+    $badges = $bdd->query('SELECT id_badge, name, description, shape, color from badges');
     
     return $badges;
   }
@@ -86,42 +86,42 @@
     } 
 
     // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER
-  function createBadge($name, $description, $shape, $color){
+    function createBadge($name, $description, $shape, $color){
+      session_start_once();
       $bdd = createCursor();
-      $req = $bdd->prepare('INSERT INTO badges(name, description, shape, color) VALUES(?, ?, ?, ?, ?)');
-      $newBadge = $req->execute([
-        $name,
-        $description,
-        $shape,
-        $color
+      $sql="INSERT INTO `badges`(`name`, `description`, `shape`, `color`) VALUES (?, ?, ?, ?)";
+      $req = $bdd->prepare($sql);
+      $req->execute([
+          strip_tags(trim($name)),
+          strip_tags(trim($description)),
+          strip_tags(trim($shape)),
+          strip_tags(trim($color))
       ]);
-  
-      return $newBadge;
+    
     }
   
     // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER
   function editBadge($badge_id, $name, $description, $shape, $color){
     $bdd = createCursor();
     $req = $bdd->prepare('UPDATE badges SET name = ?, description = ?, shape = ?, color = ? WHERE id_badge = ?');
-    $updateBadge = $req->execute([
+    $req->execute([
       $name,
       $description,
       $shape,
       $color,
       $badge_id
     ]);
-
-    return $updateBadge;
     
+
   }
 
   function removeBadge($badge_id){
     $bdd=createCursor();
     $req = $bdd->prepare('DELETE FROM badges WHERE id_badge = ?');
-    $removeBadge = $req->execute([
+    $req->execute([
       $badge_id,
     ]);
-    return $removeBadge;
+    
   }
 
   // MONTRER BADGE ET UTILISATEUR
@@ -143,5 +143,10 @@
 
   function removeBadgeFromUser($badge_id, $user_id){
 
+  }
+
+
+  function phpAlerte($msg){
+    echo'<script type="text/javascript">alert("'.$msg.'")</script>';
   }
 ?>

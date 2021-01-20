@@ -9,11 +9,13 @@
  <?php
 
     if($_SESSION['account_type'] == "ADMIN"){
-        echo "Bonjour " .$_SESSION['firstname']. " !";
+        echo "Bonjour " .$_SESSION['firstname']. " !<br/>";
         $displayBadges=displayUserBadge();
         $displayUsers = getUserNormie();
         $getBadges = getBadges();
 ?>
+<!-- ajout bouton pour les badges -->
+<button><a href= "?p=addBadge"> ADD BADGE</a></button>  
     <ul>
     <?php
         foreach($displayBadges as $value){
@@ -38,6 +40,7 @@
     ?>
     </ul>
   <?php
+//   SI NORMIE
     }else{
         
         echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
