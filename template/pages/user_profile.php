@@ -2,7 +2,7 @@
 session_start();
 include('includes/connexion.php');
 
-?>-->
+?> -->
 
 
 <!DOCTYPE html>
@@ -69,43 +69,35 @@ include('includes/connexion.php');
             <h2 class="titre_h2 text-center">Acquired badge</h2>
 
             <div>
-                <div class='tabRecipe' style="overflow-y:auto; max-height: 70vh;">
-                    <table class='tableRecipe table'>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Name</th>
-                                <th>Title</th>
-                                <th>Recipe</th>
-                            </tr>
-                        </thead>
-                        <tbody > 
-                            
-                        <?php
-                                    for ($i = 0; $i < count($arr); $i++) {
-                                        
-                                        
-                                            ?>
-                                            <tr scope="col">
-                                                <?php 
-                                                
-                                                echo "<td>".date("l", strtotime($arr[$i]['date'])) . "<br>" . implode("-", array_reverse(explode("-", $arr[$i]['date'])))."</td>";
-                
-                                                echo "<td>".$arr[$i]['first_name']. " ".$arr[$i]['last_name']."</td>";
-                
-                                                echo "<td>".$arr[$i]['title']."</td>";
-                
-                                                echo "<td>".$arr[$i]['description']."</td>";
-                                                
-                                                ?> 
-                                            </tr>
-                                            <?php  
-                                    }
-                                ?>
-                                
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-dark table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </div>
         </div>
 
