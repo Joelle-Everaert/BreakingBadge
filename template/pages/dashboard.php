@@ -9,11 +9,38 @@
  <?php
 
     if($_SESSION['account_type'] == "ADMIN"){
-       
-        echo "Bonjour " .$_SESSION['email']. " !";
+        echo "Bonjour " .$_SESSION['firstname']. " !";
+        $displayBadges=displayUserBadge();
+        $displayUsers = getUserNormie();
+        $getBadges = getBadges();
+?>
+    <ul>
+    <?php
+        foreach($displayBadges as $value){
+            echo '<li>'.$value['firstname'] . ' has the following badge: ' . $value['name'] . '</li>';
+        }
+    ?>
+    </ul>
+
+    <ul>
+    <?php
+        foreach($displayUsers as $user){
+            echo '<li>'.$user['firstname'] . " " .$user['lastname'] . " with this email: " . $user['email'] . '</li>';
+        }
+    ?>
+    </ul>
+
+    <ul>
+    <?php
+        foreach($getBadges as $badge){
+            echo '<li>'.$badge['name'] . " - [" .$badge['description']. ']</li>';
+        }
+    ?>
+    </ul>
+  <?php
     }else{
         
-        echo "<br/>Bonjour NORMIE -> " .$_SESSION['email']. " !";
+        echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
     }
  
  ?>
