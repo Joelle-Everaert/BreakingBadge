@@ -83,7 +83,7 @@
   //       $password
   //     ]);
   //   } catch (Exception $e) {
-  //     echo "You're already an account!";
+  //     echo "This email is already in use";
   //   } 
   // }
 
@@ -102,20 +102,20 @@
     }
   
     // DEMANDER A GUILLAUME
-  // function editBadge($badge_id, $name, $description, $shape, $color){
-  //   $bdd = createCursor();
-  //   $req = $bdd->prepare('UPDATE badges SET name = ?, description=?, shape=?, color=? WHERE id=?');
-  //   $updateBadge = $req->execute([
-  //     $name,
-  //     $description,
-  //     $shape,
-  //     $color,
-  //     $badge_id
-  //   ]);
+  function editBadge($badge_id, $name, $description, $shape, $color){
+    $bdd = createCursor();
+    $req = $bdd->prepare('UPDATE badges SET name = ?, description=?, shape=?, color=? WHERE id=?');
+    $updateBadge = $req->execute([
+      $name,
+      $description,
+      $shape,
+      $color,
+      $badge_id
+    ]);
 
-  //   return $updateBadge;
+    return $updateBadge;
     
-  // }
+  }
 
   function removeBadge($badge_id){
     $bdd=createCursor();
