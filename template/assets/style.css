@@ -1,29 +1,5 @@
 /* wassim */
-h1 {
-  color: white !important;
-  
-}
-
-button {
-  margin-bottom: 5vh !important;
-
-}
-
-img {
-  border-radius: 8%;
-
-}
-
-button:hover{
-  background-color:#3E444A !important;  
-  color: rgb(255, 0, 0) !important;
-}
-
-a{
-  text-decoration: none !important;
-  color: white !important;
-
-}
+/*---------------------------------------( General )-------------------------------------------------*/
 
 body {
   margin: 0;
@@ -33,39 +9,45 @@ body {
   
 }
 
-.cadre {
-  /*border multicolor*/
-  border: 5px solid blue;
-
-  border-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(19, 6, 0, 1) 35%, rgba(222, 219, 219, 1) 100%);
-  border-image-slice: 1;
-
-}
-
 nav {
   padding: 20px 0 20px 0;
   margin-bottom: 4%;
   background-color: rgb(0, 19, 19);
-  clip-path: polygon(0 0, 100% 1%, 100% 58%, 100% 68%, 0 100%, 0 57%);
+  clip-path: polygon(0 0, 100% 0%, 100% 58%, 100% 68%, 0 100%, 0 57%);
 
 }
 
-.info {
-  background: #383838;
-  box-shadow: 5px 5px 0px #161616;
+img {
+  border-radius: 8%;
 
 }
 
-.barre_vertical {
-  height: 55vh;
-  margin: 30px 142px 30px 0;
-  border-right: 2px solid black;
+a{
+  text-decoration: none !important;
+  color: white !important;
+
+}
+
+/*--------------------------------------( admin/user_Profile.php )----------------------------------*/
+
+.btn_logout {
+  margin-bottom: 5vh !important;
+
+}
+
+.btn_logout:hover{
+  background-color:rgb(165, 0, 0) !important;  
+  
+}
+
+.btn_addUsers:hover{
+  background-color:rgb(13, 160, 0) !important;  
 
 }
 
 .titre_h1 {
   margin-top: 4vh;
-
+  color: white !important;
 }
 
 .titre_h2 {
@@ -77,26 +59,50 @@ nav {
   box-shadow: 5px 5px 0px #161616;
 
 }
+.info {
+  background: #383838;
+  box-shadow: 5px 5px 0px #161616;
+
+}
+
+.cadre {
+  /*border multicolor*/
+  border: 5px solid blue;
+
+  border-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(19, 6, 0, 1) 35%, rgba(222, 219, 219, 1) 100%);
+  border-image-slice: 1;
+
+}
 
 .tableBadge::-webkit-scrollbar{
   display: none;
-  
 
 } 
+
+.barre_vertical {
+  height: 55vh;
+  margin: 30px 142px 30px 0;
+  border-right: 2px solid black;
+
+}
+
 
 .footer {
   padding-bottom: 50px;
 
 }
 
-label {
+/*------------------------------( Barre de progression => user_Profile.php )-------------------------*/
+
+label  {
   padding-right: 10px;
   font-size: 1rem;
 }
 
 
 
-/*---------------------------------------( Animation )----------------------------------------------------*/
+/*--------------------------------------<<<<<( Animation )>>>>>--------------------------------------*/
+
 .animationSpawn {
   -webkit-animation: animationSpawn 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   animation: animationSpawn 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -134,8 +140,7 @@ label {
 }
 
 
-
-/*---------------------------------------( Responsive  )----------------------------------------------------*/
+/*--------------------------------------( Responsive )-------------------------------------------*/
 
 @media only screen and (max-width: 1000px) {
   body {}

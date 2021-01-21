@@ -8,7 +8,7 @@
   $routes['students'] = 'All students';
   $routes['logout'] = 'log out';
 
-  include_once('navbar.php');
+  //==> include_once('navbar.php');
 
   $requestedPage = 'dashboard';
 
@@ -23,14 +23,11 @@
     include('pages/' .$requestedPage. '.php');
   }
   
-  if(array_key_exists($requestedPage, $routes)){
-    
-    include_once('navbar.php');
-    // include the page
-  }
-
-
-  // print_r($_SESSION);
+  //==> if(array_key_exists($requestedPage, $routes)){   
+  //==>   include_once('navbar.php');
+  //   // include the page
+  //==> }
+  //==> print_r($_SESSION);
 
   
 ?>
