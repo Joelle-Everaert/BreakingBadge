@@ -13,7 +13,7 @@
                     <div class="col-12 col-md-4">
                         <div class="col-lg-2 mt-5"> <?= $_SESSION['lastname'] ?></div>
                         <div class="col-lg-2 mt-5">  <?= $_SESSION['firstname'] ?> </div>
-                        <div class="col-lg-2 mt-5"> <?= $_SESSION['email'] ?></div>
+                        <div class="col-lg-2 mt-5"> <?= $_SESSION['email']?></div>
                     </div>
 
                 </div>

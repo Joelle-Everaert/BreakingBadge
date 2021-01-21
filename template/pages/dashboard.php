@@ -27,12 +27,16 @@
     }else{
         include_once('user_profile.php'); 
         echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
-        $displayYourBadge = displayYourBadge();
-
+        $displayYourBadge = displayYourBadge($_SESSION['user_id']);
 
           foreach($displayYourBadge as $value){
-            echo '<tr><td>'. $value['name'] . '</td></tr>';
+            ?>
+                <tr>
+                    <td><?php echo $value['name'] . "<br>" . $value['description'] ?></td>
+                  </tr>
+      <?php
           }
+            
     }
  
  ?>

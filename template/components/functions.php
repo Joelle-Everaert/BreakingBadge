@@ -37,7 +37,8 @@
       $_SESSION['firstname'] = $results['firstname'];
       $_SESSION['lastname'] = $results['lastname'];
       $_SESSION['account_type'] = $results['account_type'];
-      // $_SESSION['email'] = $email;
+      $_SESSION['email'] = $email;
+
       return true;
     }
     return false;
@@ -137,13 +138,22 @@
     return $request->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  // function displayYourBadge(){
-  //   $bdd=createCursor();
-  //   $request = $bdd->query('SELECT name GROUP_CONCAT(description separator " - ") AS description FROM user_has_badges WHERE id
-  //   inner join badges on badges.id_badge=user_has_badges.fk_id_badge
-  //   GROUP BY name');
-  //   return $request->fetchAll(PDO::FETCH_ASSOC);
-  // }
+  function displayYourBadge($user_id){
+    $bdd=createCursor();
+    $request = $bdd->query('SELECT name, description FROM user_has_badges
+    inner join users on users.id=user_has_badges.fk_id_user
+    inner join badges on badges.id_badge=user_has_badges.fk_id_badge 
+    WHERE users.id = ?');
+    // return 
+    $request->execute([
+      $user_id
+    ]);
+
+    return $request->fetchAll(PDO::FETCH_ASSOC);
+
+    // function qui montre le badge de l'utilisateur
+    // aller via la table intermediaire pour selectionner le badge qui correspond au user_id 
+  }
 
   function grantBadgeToUser($badge_id, $user_id){
 
