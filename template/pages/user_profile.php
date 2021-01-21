@@ -35,7 +35,7 @@ include('../components/db.php');
 
             <div class="cadre info container py-5">
                 <div class="row mx-auto">
-                    <div class="col-12 col-md-5"><img src="../assets/img/joker.jpg" width="250" height="300" alt="">
+                    <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="../assets/img/joker.jpg" width="250" height="300" alt="">
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="col-lg-2 mt-5"> Name: ????????????????????????????</div>
@@ -150,8 +150,8 @@ include('../components/db.php');
             </div>
         </div>
 
-
-        <footer class="animationSpawn fixed-bottom text-center">
+        <!-- d-none d-lg-block  -->
+        <footer class="container text-center mt-5">
             <div class="container">
                 <h1>Progression Badge</h1>
 
@@ -161,11 +161,6 @@ include('../components/db.php');
                 </div>
             </div>
         </footer>
-
-
-
-
-
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

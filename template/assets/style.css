@@ -17,11 +17,6 @@ nav {
 
 }
 
-img {
-  border-radius: 8%;
-
-}
-
 a{
   text-decoration: none !important;
   color: white !important;
@@ -59,6 +54,7 @@ a{
   box-shadow: 5px 5px 0px #161616;
 
 }
+
 .info {
   background: #383838;
   box-shadow: 5px 5px 0px #161616;
@@ -143,7 +139,10 @@ label  {
 /*--------------------------------------( Responsive )-------------------------------------------*/
 
 @media only screen and (max-width: 1000px) {
-  body {}
+  .titre_h1 {
+   font-size: 30px;
+  }
+
 }
 
 /* wassim */

@@ -128,6 +128,8 @@ include('../components/db.php');
             </form>
         </div>
 
+        
+
         <!---------------------------------- Barre_vertical ------------------------------------------->
 
         <div class="d-none d-lg-block col-lg-2">
