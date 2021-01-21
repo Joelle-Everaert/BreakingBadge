@@ -138,6 +138,7 @@
     return $request->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  // dans le parametre on met la session['user_id']
   function displayYourBadge($user_id){
     $bdd=createCursor();
     $request = $bdd->prepare('SELECT name, description FROM user_has_badges
@@ -151,12 +152,12 @@
   }
 
 
-  function grantBadgeToUser($badge_id, $user_id){
+  function grantBadgeToUser($user_id, $badge_id){
     $bdd=createCursor();
-    $request = $bdd->prepare('INSERT INTO user_has_badges (fk_id_badge, fk_id_user) VALUES (?, ?)');
+    $request = $bdd->prepare('INSERT INTO user_has_badges (fk_id_user, fk_id_badge) VALUES (?, ?)');
     $request->execute([
-      $badge_id, 
-      $user_id
+      $user_id,
+      $badge_id 
     ]);
   }
 
