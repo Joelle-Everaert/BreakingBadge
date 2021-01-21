@@ -1,5 +1,12 @@
 
-    <!---------------------------------- Information ------------------------------------------->
+   <?php
+   include_once('components/functions.php');
+   session_start_once();
+
+
+   $displayYourBadge = displayYourBadge($_SESSION['user_id']);
+   ?>
+   <!---------------------------------- Information ------------------------------------------->
 
     <div class="row mx-auto">
         <div class="animationSpawn col-lg-5 mb-5">
@@ -7,6 +14,8 @@
             <h2 class="titre_h2 text-center">Information</h2>
 
             <div class="cadre info container py-5">
+
+            <h4><?="<br/>Bonjour " .$_SESSION['firstname']. "!";?> </h4>
                 <div class="row mx-auto">
                     <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="./assets/img/joker.jpg" width="250" height="300" alt="">
                     </div>
@@ -38,85 +47,20 @@
                 <table class=" table table-dark table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">11</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">12</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-
+                    <?php
+                    foreach($displayYourBadge as $value){
+                    ?>
+            <tr>
+                <td><?php echo $value['name'] . "</td><td> " . $value['description'] ?></td>
+            </tr>
+            <?php
+                    }
+            ?>
                     </tbody>
                 </table>
 

@@ -25,18 +25,7 @@
   <?php
 //   SI NORMIE
     }else{
-        include_once('user_profile.php'); 
-        echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
-        $displayYourBadge = displayYourBadge($_SESSION['user_id']);
-
-          foreach($displayYourBadge as $value){
-            ?>
-                <tr>
-                    <td><?php echo $value['name'] . "<br>" . $value['description'] ?></td>
-                  </tr>
-      <?php
-          }
-            
+        include_once('user_profile.php');     
     }
  
  ?>

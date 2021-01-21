@@ -140,11 +140,10 @@
 
   function displayYourBadge($user_id){
     $bdd=createCursor();
-    $request = $bdd->query('SELECT name, description FROM user_has_badges
+    $request = $bdd->prepare('SELECT name, description FROM user_has_badges
     inner join users on users.id=user_has_badges.fk_id_user
     inner join badges on badges.id_badge=user_has_badges.fk_id_badge 
     WHERE users.id = ?');
-    // return 
     $request->execute([
       $user_id
     ]);
