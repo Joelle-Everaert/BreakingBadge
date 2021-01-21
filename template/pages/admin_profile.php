@@ -1,6 +1,15 @@
 <!---------------------------------- Navigation ------------------------------------------->
 
+<?php
+include_once('components/functions.php');
+session_start_once();
 
+
+
+
+$displayUsers = getUserNormie();
+$displayBadges=displayUserBadge();
+?>
 
 <!---------------------------------- All user ------------------------------------------->
 
@@ -13,93 +22,27 @@
             <table class=" table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
+                        <th scope="col">First</th> 
                         <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Email</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
 
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">7</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">8</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">10</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">11</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">12</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                <?php
+                foreach($displayUsers as $user){
+                    echo '<tr> <td>'.$user['firstname'] . "</td><td>" .$user['lastname'] . "</td><td>" . $user['email'] . '</td></tr>';
+                }
+                ?>
 
                 </tbody>
             </table>
 
         </div>
-
+        <!-- -------------------bouton addUser------------------- -->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
-            <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn  btn-dark"><a
-                    href="./logOut.php">Add
+            <button type="submit" name="out" class="btn_addUsers  btn  btn-dark"><a
+                    href="#####">Add
                     users
                     <i class="fas fa-user-plus"></i></a> </button>
         </form>
@@ -117,96 +60,29 @@
 
     <div class="animationSpawn col-12 col-xl-5">
 
-        <h2 class="titre_h2 text-center">Liste badge</h2>
+        <h2 class="titre_h2 text-center">User's badges</h2>
 
 
         <div class='info tableBadge' style="overflow-y:auto; max-height: 42vh;">
             <table class=" table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Badges</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">7</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">8</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">10</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">11</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">12</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-
+                    <?php
+                    foreach($displayBadges as $value){
+                        echo '<tr><td>'.$value['firstname'] . ' </td><td>' . $value['name'] . '</td></tr>';
+                    }
+                    ?>
+                    
                 </tbody>
             </table>
 
         </div>
+        <!-- ------------BOUTON ADD BADGE---------- -->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
             <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn  btn-dark"><a href="
                     ?p=addBadge"> ADD NEW BADGE</a>

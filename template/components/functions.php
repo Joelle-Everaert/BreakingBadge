@@ -74,16 +74,16 @@
 
 
 // FONCTION CREER UTILISATEURS + CONNEXION BDD
-  function createUser($firstname, $lastname, $email, $password, $account_type){
+  
+  function createUser($firstname, $lastname, $email, $password){
     $password = password_hash($password, PASSWORD_DEFAULT);
     $bdd=createCursor();
-    $req = $bdd->prepare('INSERT INTO users (firstname, lastname, email, password, account_type) VALUES(?, ?, ?, ?, ?)');
+    $req = $bdd->prepare('INSERT INTO users (email, password, firstname, lastname) VALUES(?, ?, ?, ?)');
     $req->execute([
-      $firstname,
-      $lastname,
-      $email,
-      $password,
-      $account_type
+        filter_var($email, FILTER_SANITIZE_EMAIL),
+        $password,
+        strip_tags(trim($firstname)),
+        strip_tags(trim($lastname)),
       ]);
     } 
 
@@ -135,6 +135,14 @@
     inner join badges on badges.id_badge=user_has_badges.fk_id_badge
     GROUP BY firstname');
 
+    return $request->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function displayYourBadge(){
+    $bdd=createCursor();
+    $request = $bdd->query('SELECT name GROUP_CONCAT(description separator " - ") AS description FROM user_has_badges WHERE id
+    inner join badges on badges.id_badge=user_has_badges.fk_id_badge
+    GROUP BY name');
     return $request->fetchAll(PDO::FETCH_ASSOC);
   }
 

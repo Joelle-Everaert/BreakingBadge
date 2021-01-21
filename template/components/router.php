@@ -5,7 +5,7 @@
   // $routes['dashboard'] = 'Dashboard';
   // $routes['badges'] = 'All badges';
   // $routes['logout'] = 'log out';
-  
+  $routes['addUser'] = 'USERNEW';
   
  if(isset($_GET['Success'])){
    phpAlerte('Your badge is encoded');

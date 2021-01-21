@@ -1,11 +1,11 @@
 
- <!-- <?php
+ <?php
     foreach($routes as $key=>$value){
     ?>
       <li><a href="?p=<?php echo $key; ?>"><?php echo $value; ?></a></li>
     <?php
     }
-  ?>  -->
+  ?> 
 
 
    <!---------------------------------- Navigation ------------------------------------------->
@@ -21,7 +21,9 @@
         <?php 
         if($_SESSION['account_type'] == "ADMIN"){
         ?>
-        <a class="d-flex navbar-brand" href="?p=badges"> ALL BADGES</a>
+        <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn  btn-dark"><a href="
+                    ?p=badges"> All badges</a>
+        <!-- <a class="d-flex navbar-brand" href="?p=badges"> ALL BADGES</a> -->
         <?php
         }
         ?>
