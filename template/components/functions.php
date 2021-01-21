@@ -138,13 +138,13 @@
     return $request->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function displayYourBadge(){
-    $bdd=createCursor();
-    $request = $bdd->query('SELECT name GROUP_CONCAT(description separator " - ") AS description FROM user_has_badges WHERE id
-    inner join badges on badges.id_badge=user_has_badges.fk_id_badge
-    GROUP BY name');
-    return $request->fetchAll(PDO::FETCH_ASSOC);
-  }
+  //==> function displayYourBadge(){
+  //==>   $bdd=createCursor();
+  //==>   $request = $bdd->query('SELECT name GROUP_CONCAT(description separator " - ") AS description FROM user_has_badges WHERE id
+  //==>   inner join badges on badges.id_badge=user_has_badges.fk_id_badge
+  //==>   GROUP BY name');
+  //==>   return $request->fetchAll(PDO::FETCH_ASSOC);
+  //==> }
 
 
 

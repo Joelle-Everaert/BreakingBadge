@@ -11,9 +11,9 @@
                     <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="./assets/img/joker.jpg" width="250" height="300" alt="">
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="col-lg-2 mt-5"> <?= $_SESSION['lastname'] ?></div>
-                        <div class="col-lg-2 mt-5">  <?= $_SESSION['firstname'] ?> </div>
-                        <div class="col-lg-2 mt-5"> <?= $_SESSION['email'] ?></div>
+                        <div class="col-lg-2"> <h2>Lastname:</h2>  <?= $_SESSION['lastname'] ?></div>
+                        <div class="col-lg-2 mt-5"> <h2>Firstname:</h2>  <?= $_SESSION['firstname'] ?> </div>
+                        <div class="col-lg-2 mt-5"> <h2>Email:</h2>  <?= $_SESSION['email'] ?></div>
                     </div>
 
                 </div>
@@ -124,7 +124,7 @@
         </div>
 
         <!-- d-none d-lg-block  -->
-        <footer class="container text-center mt-5">
+        <footer class="container text-center mt-1">
             <div class="container">
                 <h1>Progression Badge</h1>
 

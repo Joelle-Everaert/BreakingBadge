@@ -25,13 +25,13 @@
 //   SI NORMIE
     }else{
         include_once('user_profile.php'); 
-        echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
-        $displayYourBadge = displayYourBadge();
+        //==> echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
+        //==> $displayYourBadge = displayYourBadge();
 
 
-          foreach($displayYourBadge as $value){
-            echo '<tr><td>'. $value['name'] . '</td></tr>';
-          }
+        //==>   foreach($displayYourBadge as $value){
+        //==>     echo '<tr><td>'. $value['name'] . '</td></tr>';
+        //==>   }
     }
  
  ?>
