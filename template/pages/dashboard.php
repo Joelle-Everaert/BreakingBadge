@@ -1,6 +1,6 @@
 <h1>
  <?php
- include_once('components/functions.php');
+ require_once('components/functions.php');
  session_start_once();
  
  ?>
@@ -21,17 +21,21 @@
         }
     ?>
     </ul>
+    <ul>
   <?php
 //   SI NORMIE
     }else{
         include_once('user_profile.php'); 
         echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
-        $displayYourBadge = displayYourBadge();
+        $displayYourBadge = displayYourBadge($_SESSION['user_id']);
+        
+        foreach($displayYourBadge as $value){
+            echo '<li>'.$value['name'] . " - [" .$value['description']. ']</li>';
+        }
 
-
-          foreach($displayYourBadge as $value){
-            echo '<tr><td>'. $value['name'] . '</td></tr>';
+              
           }
-    }
+    
  
  ?>
+ </ul>

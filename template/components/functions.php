@@ -131,25 +131,33 @@
   function displayUserBadge(){
     $bdd=createCursor();
     $request = $bdd->query('SELECT firstname, GROUP_CONCAT(name separator " - ") AS name FROM user_has_badges
-    inner join users on users.id=user_has_badges.fk_id_user
-    inner join badges on badges.id_badge=user_has_badges.fk_id_badge
+    inner join users ON users.id=user_has_badges.fk_id_user
+    inner join badges ON badges.id_badge=user_has_badges.fk_id_badge
     GROUP BY firstname');
 
     return $request->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function displayYourBadge(){
+  function displayYourBadge($user_id){
     $bdd=createCursor();
-    $request = $bdd->query('SELECT name GROUP_CONCAT(description separator " - ") AS description FROM user_has_badges WHERE id
-    inner join badges on badges.id_badge=user_has_badges.fk_id_badge
-    GROUP BY name');
+    $request = $bdd->prepare('SELECT name, description FROM user_has_badges
+    inner join badges on badges.id_badge=user_has_badges.fk_id_badge 
+    inner join users on users.id=user_has_badges.fk_id_user WHERE users.id = ?');
+    $request->execute([
+      $user_id
+    ]);
+
     return $request->fetchAll(PDO::FETCH_ASSOC);
   }
 
 
-
   function grantBadgeToUser($badge_id, $user_id){
-
+    $bdd=createCursor();
+    $request = $bdd->prepare('INSERT INTO user_has_badges (fk_id_badge, fk_id_user) VALUES (?, ?)');
+    $request->execute([
+      $badge_id, 
+      $user_id
+    ]);
   }
 
   function removeBadgeFromUser($badge_id, $user_id){
