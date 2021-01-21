@@ -50,6 +50,7 @@
     session_destroy();
   }
 
+  // FONCTIONNE
   function getBadges(){
     $bdd = createCursor();
     $badges = $bdd->query('SELECT id_badge, name, description, shape, color from badges');
@@ -57,13 +58,14 @@
     return $badges;
   }
 
+  //FONCTIONNE
   function getUsers(){
     $bdd = createCursor();
     $users = $bdd->query('SELECT firstname, lastname, email FROM users');
     return $users;
   }
 
-// AFFICHER LES USERS AVEC ACCOUNT SPECIFIQUE
+// AFFICHER LES USERS AVEC ACCOUNT SPECIFIQUE // FONCTIONNE
   function getUserNormie(){
     $bdd = createCursor();
     $userNormie = $bdd->query('SELECT firstname, lastname, email FROM users WHERE account_type = "NORMIE"');
@@ -85,7 +87,8 @@
       ]);
     } 
 
-    // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER
+
+    // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER // FONCTIONNE
     function createBadge($name, $description, $shape, $color){
       session_start_once();
       $bdd = createCursor();
@@ -100,7 +103,7 @@
     
     }
   
-    // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER
+    // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER +/-
   function editBadge($badge_id, $name, $description, $shape, $color){
     $bdd = createCursor();
     $req = $bdd->prepare('UPDATE badges SET name = ?, description = ?, shape = ?, color = ? WHERE id_badge = ?');
@@ -124,7 +127,7 @@
     
   }
 
-  // MONTRER BADGE ET UTILISATEUR
+  // MONTRER BADGE ET UTILISATEUR // FOCNTIONNE
   function displayUserBadge(){
     $bdd=createCursor();
     $request = $bdd->query('SELECT firstname, GROUP_CONCAT(name separator " - ") AS name FROM user_has_badges

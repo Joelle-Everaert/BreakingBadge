@@ -6,10 +6,7 @@
   $routes['badges'] = 'All badges';
   $routes['logout'] = 'log out';
   
-  // if($_SESSION['account_type'] == "ADMIN"){
-  //   $routes['addBadges'] = 'Add Badges';
-  // }
-  // include_once('navbar.php');
+  
  if(isset($_GET['Success'])){
    phpAlerte('Your badge is encoded');
  }
