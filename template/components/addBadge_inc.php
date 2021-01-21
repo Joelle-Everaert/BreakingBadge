@@ -7,5 +7,5 @@ if(isset($_POST['badge_name'], $_POST['description'], $_POST['shape'], $_POST['c
     header("Location: ../?p=dashboard&Success");
 }
 
-exit();
+exit(); // pour sortir du script php
 ?>

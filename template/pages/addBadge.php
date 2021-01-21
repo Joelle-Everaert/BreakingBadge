@@ -23,7 +23,7 @@
                 <label for="validationCustom03" class="Titleofthelabels">Badge Shape</label>
                 <select class="custom-select" name="shape" id="inputGroupSelect02">
                     <option selected>Chose the shape of your badge</option>
-                    <option value="cirle">Circle</option>
+                    <option value="circle">Circle</option>
                     <option value="square">Square</option>
                     <option value="triangle">Triangle</option>
                     <option value="rectangle">Rectangle</option>
