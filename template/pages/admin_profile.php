@@ -41,10 +41,25 @@ $displayBadges=displayUserBadge();
         </div>
         <!-- -------------------bouton addUser------------------- -->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
-            <button type="button" name="addUser" class="btn_addUsers btn btn-dark" data-toggle="modal" data-target="#signupModal">Add users
-               
+            <button type="button" name="addUser" class="btn_addUsers btn btn-dark" data-toggle="modal"
+                data-target="#signupModal">Add users
+
                 <i class="fas fa-user-plus"></i></button>
         </form>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign-up</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php include('./pages/addUser.php')?>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!---------------------------------- Barre_vertical ------------------------------------------->
@@ -82,23 +97,7 @@ $displayBadges=displayUserBadge();
         <!-- ------------BOUTON ADD BADGE---------- -->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
             <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn btn-dark"><a href="
-                    ?p=addBadge"> ADD NEW BADGE</a>
+                    ?p=addBadge"> ADD NEW BADGE<i class="fas fa-calendar-plus"></i></a>
             </button>
         </form>
-    </div>   
-    
-    
-    
-     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sign-up</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                     <?php include('./pages/addUser.php')?>
-                </div>
-            </div>
-        </div>
     </div>
