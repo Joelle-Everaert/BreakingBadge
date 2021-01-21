@@ -43,10 +43,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
+        
         <button class="btn btn-light" type="submit">Submit form</button>
 
     </form>
