@@ -1,4 +1,4 @@
-<h1>BADGES</h1>
+<h1>LIST OF BADGES</h1>
 
 <?php
 //importer fonction

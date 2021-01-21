@@ -1,13 +1,3 @@
-<?php
-session_start();
-include('../components/db.php');
-
-?>
-
-
-    <!---------------------------------- Navigation ------------------------------------------->
-
-    <?php include('../components/navbar.php');?>
 
     <!---------------------------------- Information ------------------------------------------->
 
@@ -18,12 +8,12 @@ include('../components/db.php');
 
             <div class="cadre info container py-5">
                 <div class="row mx-auto">
-                    <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="../assets/img/joker.jpg" width="250" height="300" alt="">
+                    <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="./assets/img/joker.jpg" width="250" height="300" alt="">
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="col-lg-2 mt-5"> Name: ????????????????????????????</div>
-                        <div class="col-lg-2 mt-5"> FirstName: ???????????????????????????? </div>
-                        <div class="col-lg-2 mt-5"> Email: ????????????????????????????</div>
+                        <div class="col-lg-2 mt-5"> Lastname: <?= $_SESSION['lastname'] ?></div>
+                        <div class="col-lg-2 mt-5"> Firstname: <?= $_SESSION['firstname'] ?> </div>
+                        <div class="col-lg-2 mt-5"> Email: <?= $_SESSION['email'] ?></div>
                     </div>
 
                 </div>

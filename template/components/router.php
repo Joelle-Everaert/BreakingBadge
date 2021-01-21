@@ -2,9 +2,9 @@
   include_once('functions.php');
 
   $routes = [];
-  $routes['dashboard'] = 'Dashboard';
-  $routes['badges'] = 'All badges';
-  $routes['logout'] = 'log out';
+  // $routes['dashboard'] = 'Dashboard';
+  // $routes['badges'] = 'All badges';
+  // $routes['logout'] = 'log out';
   
   
  if(isset($_GET['Success'])){
@@ -26,7 +26,7 @@
       // include the page
       include_once('pages/' .$requestedPage. '.php');
     }else{
-      echo "<h1> HEY MAN, THIS PAGE DOESN'T EXIST!! DONT TOUCH MY URL! </h1>";
+      echo "<h1 style='color:white;text-align:center;'> HEY MAN, THIS PAGE DOESN'T EXIST!! DONT TOUCH MY URL! </h1>";
     }
   }
   

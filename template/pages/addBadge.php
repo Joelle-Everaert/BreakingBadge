@@ -22,38 +22,17 @@
         </div>
         <!-- DOUBLE NAME FORMULAIRE -->
         <div class="form-row">
-            <div class="col-md-6 mb-3">
+        <div class="col-md-6 mb-3">
                 <label for="validationCustom03" class="Titleofthelabels">Badge Shape</label>
-                <div class="w-100"></div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="shape" name="inlineRadioOptions"
-                        id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">
-                        <div class="rectangle"></div>
-                    </label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="shape" name="inlineRadioOptions"
-                        id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">
-                        <div class="square"></div>
-                    </label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="shape" name="inlineRadioOptions"
-                        id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">
-                        <div class="triangle-up"></div>
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="shape" name="inlineRadioOptions"
-                        id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">
-                        <div class="circle"></div>
-                    </label>
+                <select class="custom-select" name="shape" id="inputGroupSelect02">
+                    <option selected>Chose the shape of your badge</option>
+                    <option class="circle" value="circle">Circle</option>
+                    <option class="square" value="square">Square</option>
+                    <option class="triangle-up" value="triangle">Triangle</option>
+                    <option class="rectangle" value="rectangle">Rectangle</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please chose a shape.
                 </div>
             </div>
             <div class="col-md-6 mb-3">
