@@ -145,7 +145,7 @@
     ]);
     return $removeBadge;
   }
-// function for admin to see user badges
+//function for admin to see user badges
   //cest bon
   function displayUserBadge(){
     $bdd=createCursor();
