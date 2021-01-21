@@ -28,13 +28,14 @@
     session_start_once();
 
     $cursor = createCursor();
-    $query = $cursor->prepare('SELECT id, password, firstname, account_type from users WHERE email=?');
+    $query = $cursor->prepare('SELECT id, password, firstname, lastname, account_type from users WHERE email=?');
     $query->execute([$email]);
     $results = $query->fetch();
     
     if(!empty($results) AND password_verify($password, $results['password'])){
       $_SESSION['user_id'] = $results['id'];
       $_SESSION['firstname'] = $results['firstname'];
+      $_SESSION['lastname'] = $results['lastname'];
       $_SESSION['account_type'] = $results['account_type'];
       // $_SESSION['email'] = $email;
       return true;
@@ -46,22 +47,23 @@
     session_start_once();
     session_destroy();
   }
-//cest bon
+
+  // FONCTIONNE
   function getBadges(){
     $bdd = createCursor();
-    $badges = $bdd->query('SELECT name, description, shape, color from badges');
+    $badges = $bdd->query('SELECT id_badge, name, description, shape, color from badges');
+    
     return $badges;
   }
 
-  //cest bon
+  //FONCTIONNE
   function getUsers(){
     $bdd = createCursor();
     $users = $bdd->query('SELECT firstname, lastname, email FROM users');
     return $users;
   }
 
-// AFFICHER LES USERS AVEC ACCOUNT SPECIFIQUE
-  //cest bon
+// AFFICHER LES USERS AVEC ACCOUNT SPECIFIQUE // FONCTIONNE
   function getUserNormie(){
     $bdd = createCursor();
     $userNormie = $bdd->query('SELECT firstname, lastname, email FROM users WHERE account_type = "NORMIE"');
@@ -70,93 +72,78 @@
 
 
 // FONCTION CREER UTILISATEURS + CONNEXION BDD
-  // function createUser($firstname, $lastname, $email, $password, $account){
-  //   $password = password_hash($password, PASSWORD_DEFAULT);
-  //   $bdd = createCursor();
-  //   $request = $bdd->prepare('SELECT EXISTS(SELECT email FROM users where email = ?');
-
-  //   $request->execute([
-  //     $_POST['email']
-  //   ]);
-  //     $result = $request->fetchColumn();
-  //     $request->closeCursor();
-
-  //     if(!$result){
-  //       $req = $bdd->prepare('INSERT INTO users(firstname, lastname, email, password) VALUES(?, ?, ?, ?)');
-  //       //     $req->execute([
-  //       //       $firstname,
-  //       //       $lastname,
-  //       //       $email,
-  //       //       $password
-  //       //     ]);
-  //       //   } catch (Exception $e) {
-  //       //     echo "This email is already in use";
-  //       //   } 
-  //       }
-  //     }    
-
-  function createUser($firstname, $lastname, $email, $password, $account_type){
+  
+  function createUser($firstname, $lastname, $email, $password){
     $password = password_hash($password, PASSWORD_DEFAULT);
     $bdd=createCursor();
-    $req = $bdd->prepare('INSERT INTO users (firstname, lastname, email, password, account_type) VALUES(?, ?, ?, ?, ?)');
+    $req = $bdd->prepare('INSERT INTO users (email, password, firstname, lastname) VALUES(?, ?, ?, ?)');
     $req->execute([
-      $firstname,
-      $lastname,
-      $email,
-      $password,
-      $account_type
+        filter_var($email, FILTER_SANITIZE_EMAIL),
+        $password,
+        strip_tags(trim($firstname)),
+        strip_tags(trim($lastname)),
       ]);
     } 
 
-  
-  function createBadge($name, $description, $shape, $color){
+
+    // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER // FONCTIONNE
+    function createBadge($name, $description, $shape, $color){
+      session_start_once();
       $bdd = createCursor();
-      $req = $bdd->prepare('INSERT INTO badges(name, description, shape, color) VALUES(?, ?, ?, ?, ?)');
-      $newBadge = $req->execute([
-        $name,
-        $description,
-        $shape,
-        $color
+      $sql="INSERT INTO `badges`(`name`, `description`, `shape`, `color`) VALUES (?, ?, ?, ?)";
+      $req = $bdd->prepare($sql);
+      $req->execute([
+          strip_tags(trim($name)),
+          strip_tags(trim($description)),
+          strip_tags(trim($shape)),
+          strip_tags(trim($color))
       ]);
-  
-      return $newBadge;
+    
     }
   
-    // DEMANDER A GUILLAUME
+    // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER +/-
   function editBadge($badge_id, $name, $description, $shape, $color){
     $bdd = createCursor();
-    $req = $bdd->prepare('UPDATE badges SET name = ?, description=?, shape=?, color=? WHERE id_badge=?');
-    $updateBadge = $req->execute([
+    $req = $bdd->prepare('UPDATE badges SET name = ?, description = ?, shape = ?, color = ? WHERE id_badge = ?');
+    $req->execute([
       $name,
       $description,
       $shape,
       $color,
       $badge_id
     ]);
-    return $updateBadge;
     
+
   }
 
   function removeBadge($badge_id){
     $bdd=createCursor();
-    $req = $bdd->prepare('DELETE FROM badges WHERE id_badge=?');
-    $removeBadge = $req->execute([
+    $req = $bdd->prepare('DELETE FROM badges WHERE id_badge = ?');
+    $req->execute([
       $badge_id,
     ]);
-    return $removeBadge;
+    
   }
+
 //function for admin to see user badges
   //cest bon
+  // MONTRER BADGE ET UTILISATEUR // FOCNTIONNE
   function displayUserBadge(){
     $bdd=createCursor();
     $request = $bdd->query('SELECT firstname, GROUP_CONCAT(name separator " - ") AS name FROM user_has_badges
     inner join users on users.id=user_has_badges.fk_id_user
     inner join badges on badges.id_badge=user_has_badges.fk_id_badge
     GROUP BY firstname');
-
     return $request->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  // function displayYourBadge(){
+  //   $bdd=createCursor();
+  //   $request = $bdd->query('SELECT name GROUP_CONCAT(description separator " - ") AS description FROM user_has_badges WHERE id
+  //   inner join badges on badges.id_badge=user_has_badges.fk_id_badge
+  //   GROUP BY name');
+  //   return $request->fetchAll(PDO::FETCH_ASSOC);
+  // }
 
   function grantBadgeToUser($badge_id, $user_id){
 
@@ -164,5 +151,9 @@
 
   function removeBadgeFromUser($badge_id, $user_id){
 
+  }
+
+  function phpAlerte($msg){
+    echo'<script type="text/javascript">alert("'.$msg.'")</script>';
   }
 ?>

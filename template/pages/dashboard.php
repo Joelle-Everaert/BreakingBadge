@@ -10,41 +10,29 @@
  <?php
 
     if($_SESSION['account_type'] == "ADMIN"){
-        echo "Bonjour " .$_SESSION['firstname']. " !";
-
-        $displayBadges=displayUserBadge();
-        $displayUsers = getUserNormie();
+        include_once('admin_profile.php');
+        echo "Bonjour " .$_SESSION['firstname']. " !<br/>";
         $getBadges = getBadges();
+?>
+
+    <ul>
+    <?php
+        foreach($getBadges as $badge){
+            echo '<li>'.$badge['name'] . " - [" .$badge['description']. ']</li>';
+        }
     ?>
-      <ul>
-        <?php
-            foreach($displayBadges as $value){
-                echo '<li>'.$value['firstname'] . ' has the following badge: ' . $value['name'] . '</li>';
-            }
-        ?>
-      </ul>
-
-      <ul>
-        <?php
-            foreach($displayUsers as $user){
-                echo '<li>'.$user['firstname'] . " " .$user['lastname'] . " " . $user['email'] . '</li>';
-            }
-        ?>
-      </ul>
-
-      <ul>
-        <?php
-            foreach($getBadges as $badge){
-                echo '<li>'.$badge['name'] . " - " .$badge['description']. '</li>';
-            }
-        ?>
-      </ul>
+    </ul>
   <?php
-    }else if($_SESSION['account_type'] == "NORMIE"){
-        echo "<br/>Bonjour NORMIE -> " .$_SESSION['firstname']. " !";
+//   SI NORMIE
+    }else{
+        include_once('user_profile.php'); 
+        echo "<br/>Bonjour " .$_SESSION['firstname']. " " .$_SESSION['lastname']. "!";
+        $displayYourBadge = displayYourBadge();
 
-    } else {
-        echo "There is a problem with your account type. Try logging in again.";
+
+          foreach($displayYourBadge as $value){
+            echo '<tr><td>'. $value['name'] . '</td></tr>';
+          }
     }
  
  ?>
