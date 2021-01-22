@@ -49,7 +49,7 @@ $displayBadges = displayUserBadge();
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sign-up</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Register</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -94,8 +94,28 @@ $displayBadges = displayUserBadge();
         
         <!---------------------------------------BOUTON ADD BADGE---------------------------------------------->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
-            <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn btn-dark"><a href="
-                    ?p=addBadge"> ADD NEW BADGE<i class="icon fas fa-calendar-plus"></i></a>
-            </button>
+            <button type="button" name="out" class="btn_addUsers btn btn-dark" data-toggle="modal"
+                data-target="#signupModal">Add badge to user
+
+                <i class="icon fas fa-calendar-plus"></i></button>
         </form>
+   
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add badge to user</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php include_once('addBadgeToUser.php')?>
+                </div>
+            </div>
+        </div>
     </div>
+        
+        
+        
+    
+            

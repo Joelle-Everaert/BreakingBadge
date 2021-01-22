@@ -21,6 +21,6 @@
             </div>
 
 
-                <input type="submit" value="Sign-up" name="btnSignup" class="btn btn-dark">
+                <input type="submit" value="Register" name="btnSignup" class="btn btn-dark">
             </form>
         </section>
