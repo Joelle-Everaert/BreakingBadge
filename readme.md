@@ -63,4 +63,36 @@ Here is a screenshot of the database and the structure of its tables : ! Databas
 
 ***Important! *** There is also the possibility to login to our website as Admin. Admins do not have to go through the checkout process like students do, and they can also view the entry and exit history of any student of their choice.
 
+What did we learn from this experience:
+
+
+This project taught us many things, but most importantly, it taught us teamwork. We had daily meetings at the start and end of the day to discuss what everyone's tasks will 
+be for the day. We managed to break down this project into trackable tasks for everyone to complete. This teamwork is also apparent when we consider that two people worked on 
+the aspect of our website, while the other two people worked on the functionality and integration of MySQL with the website. Linking the two sections together was challenging 
+at times, especially when merging branches on GitHub, but we powered through it an got a better taste of what a real life group project looks like. We will all be better 
+equipped to work in teams in the future.
+
+Furthermore, we learned how personalisable and how many possibilities there are with integrating a database into our website. We can create, read, update and delete data from 
+the database directly on PHPMyAdmin, in the PHP website code and also as a user, directly on the website!
+
+Also, we learned how to carry out a password hash, and why it is so important to do, as an additional security measure!
+
+It should be mentioned that this project also refreshed some concepts we have already learned in HTML, CSS and Javascript, by creating a beautiful and responsive website.
+
+Problems encountered:
+During the first couple of days, we encountered major problems with PHP. But with the help of our colleagues, we succedeed on creating and implementing PHP functions. 
+
+Within day 3 of the project, we attempted merging branches on github, but after merging the back-end and the front-end branches, the CSS was not responding properly on all the 
+screens, depending on who's screen we were streaming the website from at the time.
+
+In conclusion, it was the biggest project we had to do. Thanks to the "mybocuse" project, we were ready for it though. 
+
+Conclusion
+
+We created Breaking_Badge, a functional, integrated, full-stack prototype for granting badges to users. 
+
+Thank you for reading this readme and giving us feedback on the project 👊
+
+[^1]:Fair use disclaimer, this website is for educational purpose only.
+
 
