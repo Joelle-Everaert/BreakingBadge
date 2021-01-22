@@ -1,4 +1,4 @@
-# My BreakingBadge Full Stack project
+# BreakingBadge Full Stack project
 ___________ 
 
 ### Team Members :
