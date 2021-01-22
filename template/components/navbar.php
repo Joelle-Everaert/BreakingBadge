@@ -25,16 +25,14 @@
         ?>
         <button type="submit" name="out" value="Deconnexion" class="btn_allBadge  btn btn-dark"><a href="
                     ?p=badges"> All badges</a><i class="icon fas fa-id-badge"></i></button>
-        
+
+        <button type="submit" class="btn_home btn btn-dark"><a href="?p=dashboard">Home
+               <i class="icon fas fa-home"></i></a> </button>
+
         <?php
         }
         ?>
        
-    
-            
-            <button type="submit" class="btn_home btn btn-dark"><a href="?p=dashboard">Home
-               <i class="icon fas fa-home"></i></a> </button>
-
             <button style="margin-left:12px" type="submit" class="btn_logout btn btn-dark"><a href="?p=logout">Logout
                  <i class="icon fas fa-sign-out-alt"></i></a> </button>   
                 
