@@ -31,40 +31,29 @@
 </head>
 
 <body>
-    <h1 class="mytitle">List of all badges</h1>
+    <h1 class="mytitle text-center">List of all badges</h1>
     <div class="tableallbadges">
         <table class="animationSpawn table table-dark table-striped">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Badge</th>
+                    <th scope="col">Description </th>
                     <td>Edit</td>
                     <td>Delete</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-
                     <td>Leonardo Dicaprio</td>
-                    <td><img src="https://pitshanger-ltd.co.uk/images/colours/517-TL_Yellow%201.jpg" width="50"
-                            height="50" alt=""></td>
-                    <td>
-                        <!-- <form><button type="button" name="editBadge" class="btn_editBadge btn" data-toggle="modal"
-                            data-target="#signupModal"> -->
-                            <i class="fa fa-edit"></i>
-                        <!-- </button></form> -->
-                            
-                        </td>
-
-
+                    <td></td>
+                    <td><i class="fa fa-edit"></i></td>
                     <td><i class="fa fa-trash"></i>
                 </td>
                 </tr>
                 <tr>
 
                     <td>Cris Evans</td>
-                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Green_rectangle.svg/1024px-Green_rectangle.svg.png"
-                            width="50 " height="50" alt=""></td>
+                    <td></td>
                     <td><i class="fa fa-edit"></i></td>
                     <td><i class="fa fa-trash"></i></td>
                 </tr>
@@ -72,16 +61,14 @@
                 <tr>
 
                     <td>Robin Williams</td>
-                    <td><img src="http://www.clker.com/cliparts/d/e/d/2/13140637481464283876orange%20triangle-hi.png"
-                            width="50 " height="50" alt=""></td>
+                    <td></td>
                     <td><i class="fa fa-edit"></i></td>
                     <td><i class="fa fa-trash"></i></td>
                 </tr>
                 <tr>
 
                     <td>Will Smith</td>
-                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Light_Blue_Circle.svg/1200px-Light_Blue_Circle.svg.png"
-                            width="50 " height="50" alt=""></td>
+                    <td></td>
                     <td><i class="fa fa-edit"></i></td>
                     <td><i class="fa fa-trash"></i></td>
                 </tr>
@@ -92,19 +79,37 @@
     </div>
 
 
-    <!-- <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sign-up</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <?php //include('./components/addUser_inc.php')?>
+     
+     <!-- ------------BOUTON ADD BADGE---------- -->
+        <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
+            <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn btn-dark"><a href="
+                    ?p=addBadge"> ADD NEW BADGE<i class="icon fas fa-calendar-plus"></i></a>
+            </button>
+        </form>
+<!----------------------------------------------------------------- Modal + button ----------------------------------------------------------------------------------->
+<!-- 
+     <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
+            <button type="button" name="addUser" class="btn_addUsers btn btn-dark" data-toggle="modal"
+                data-target="#signupModal">All Edit
+
+                <i class="fas fa-user-edit"></i></button>
+        </form>
+
+        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">All Edit</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?php //include('./pages/addBadge.php')?>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> -->
+        </div> -->
+
+        
 
 </body>
 

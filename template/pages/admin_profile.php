@@ -39,7 +39,7 @@ $displayBadges=displayUserBadge();
             </table>
 
         </div>
-        <!-- -------------------bouton addUser------------------- -->
+        <!-- ------------------- bouton addUser + Modal ------------------- -->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
             <button type="button" name="addUser" class="btn_addUsers btn btn-dark" data-toggle="modal"
                 data-target="#signupModal">Add users
@@ -94,7 +94,8 @@ $displayBadges=displayUserBadge();
             </table>
 
         </div>
-        <!-- ------------BOUTON ADD BADGE---------- -->
+        
+        <!---------------------------------------BOUTON ADD BADGE---------------------------------------------->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
             <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn btn-dark"><a href="
                     ?p=addBadge"> ADD NEW BADGE<i class="icon fas fa-calendar-plus"></i></a>
