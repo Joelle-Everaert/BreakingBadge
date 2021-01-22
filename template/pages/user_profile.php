@@ -11,9 +11,9 @@
                     <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="./assets/img/joker.jpg" width="250" height="300" alt="">
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="col-lg-2"> <h2>Lastname:</h2>  <?= $_SESSION['lastname'] ?></div>
-                        <div class="col-lg-2 mt-5"> <h2>Firstname:</h2>  <?= $_SESSION['firstname'] ?> </div>
-                        <div class="col-lg-2 mt-5"> <h2>Email:</h2>  <?= $_SESSION['email'] ?></div>
+                        <div class="col-lg-2"> <h3>Lastname:</h3>  <p class="p_profile"><?= $_SESSION['lastname'] ?></p> </div>
+                        <div class="col-lg-2 mt-5"> <h3>Firstname:</h3> <p  class="p_profile"><?= $_SESSION['firstname'] ?></p>  </div>
+                        <div class="col-lg-2 mt-5"> <h3>Email:</h3> <p  class="p_profile"><?= $_SESSION['email'] ?></p> </div>
                     </div>
 
                 </div>

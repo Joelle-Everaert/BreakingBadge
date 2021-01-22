@@ -85,6 +85,12 @@ a {
 
 }
 
+.p_profile{
+margin-left: left 10px;
+font-size: 20px;
+
+}
+
 .tableBadge::-webkit-scrollbar {
   display: none;
 
@@ -108,8 +114,6 @@ a {
   padding-bottom: 8%;
   clip-path: polygon(0 0, 100% 0%, 100% 58%, 100% 68%, 0 90%, 0 57%);
 }
-
-
 
 /*------------------------------( Barre de progression => user_Profile.php )-------------------------*/
 
