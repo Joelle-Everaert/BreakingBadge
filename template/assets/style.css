@@ -105,12 +105,7 @@ font-size: 20px;
 
 }
 
-.barre_vertical {
-  height: 55vh;
-  margin: 30px 142px 30px 0;
-  border-right: 2px solid black;
 
-}
 
 .modal-content{
   background-color: grey;
