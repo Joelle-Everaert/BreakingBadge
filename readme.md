@@ -81,7 +81,7 @@ During the first couple of days, we encountered major problems with PHP. But wit
 Within day 4 of the project, we attempted merging branches on github, but after merging the back-end and the front-end branches, the CSS was not responding properly on all the 
 screens, depending on who's screen we were streaming the website from at the time.
 
-In conclusion, it was the biggest project we had to do. Thanks to the "breaking page" project, we were ready for it though. 
+In conclusion, it was the biggest project we had to do. Thanks to the "breaking badge" project, we were ready for it though. 
 
 Conclusion
 
