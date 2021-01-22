@@ -54,6 +54,10 @@ color: white !important ;
   margin-right: 10px;
 }
 
+.btnSend{
+  margin-top:3vh;
+
+}
 
 .btn_addUsers:hover {
   background-color: rgb(13, 160, 0) !important;
@@ -110,7 +114,6 @@ font-size: 20px;
 
 .modal-content{
   background-color: grey;
-  color: black !important;
   filter: brightness(90%);
   margin-top: 8vh;
 }

@@ -30,5 +30,6 @@ $displayUsers = getUserNormie()
     }
  ?>
     </select>
-    <button class="btn btn-light" type="submit">SEND</button>
+    <button class="btnSend btn btn-light" type="submit">Enter</button>
+   
 </form>    

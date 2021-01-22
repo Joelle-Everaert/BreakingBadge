@@ -92,16 +92,16 @@ $displayBadges = displayUserBadge();
 
         </div>
         
-        <!---------------------------------------BOUTON ADD BADGE---------------------------------------------->
+        <!---------------------------------------BOUTON + Modal Add Badge To User---------------------------------------------->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
-            <button type="button" name="out" class="btn_addUsers btn btn-dark" data-toggle="modal"
-                data-target="#signupModal">Add badge to user
+            <button type="button" name="addBadgeToUser" class="btn_addUsers btn btn-dark" data-toggle="modal"
+                data-target="#addBadgeToUser">Add Badge To User
 
-                <i class="icon fas fa-calendar-plus"></i></button>
+                <i class="fas fa-user-plus"></i></button>
         </form>
-   
+    </div>
 
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addBadgeToUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -109,13 +109,11 @@ $displayBadges = displayUserBadge();
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <?php include_once('addBadgeToUser.php')?>
+                    <?php include('./pages/addBadgeToUser.php')?>
                 </div>
             </div>
         </div>
     </div>
-        
-        
-        
+    </div>
     
             
