@@ -253,3 +253,21 @@ h3.addbadgeh3 {
 	border-bottom: 50px solid rgb(255, 255, 255);
 }
 
+/* --------------------------- BADGES.PHP ------------------------------------------- */
+
+h1.mytitle {
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: center !important;
+  padding-left: 40%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  display: inline-flex;
+}
+
+.tableallbadges {
+  width: 80%;
+  text-align: center;
+  padding-left: 20%;
+}
+
+
