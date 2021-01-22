@@ -12,15 +12,15 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" name="email" placeholder="Please enter an email address" class="form-control" aria-describedby="emailHelp">
+                <input type="email" name="email" placeholder="Please enter an email address" id="email" class="form-control" aria-describedby="emailHelp">
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" placeholder="********" class="form-control" id="exampleInputPassword1">
+                <input type="password" name="password" placeholder="********" class="form-control" id="password" id="exampleInputPassword1">
             </div>
 
 
-                <input type="submit" value="Register" name="btnSignup" class="btn btn-dark">
+                <input type="submit" value="Register" name="btnSignup" id="button" class="btn btn-dark">
             </form>
         </section>

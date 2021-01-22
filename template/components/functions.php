@@ -119,7 +119,7 @@
 
   function removeBadge(){
     $bdd=createCursor();
-    $req = $bdd->prepare('DELETE FROM badges WHERE id_badge =:id_badge');
+    $req = $bdd->prepare('DELETE FROM badges WHERE id_badge =:id_badge LIMIT 1');
     $req->bindValue(':id_badge', $_GET['id_badge']);
     $req->execute();
     

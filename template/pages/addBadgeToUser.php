@@ -3,7 +3,7 @@
 
 $badges = getBadges();
 $displayUsers = getUserNormie() 
-// ERREUR!!!!!
+
 ?>
 
 <form class="badgeToUser" method="POST" action="components/addBadgeToUser_inc.php">
