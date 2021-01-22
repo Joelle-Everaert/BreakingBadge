@@ -68,7 +68,7 @@
 // AFFICHER LES USERS AVEC ACCOUNT SPECIFIQUE // FONCTIONNE
   function getUserNormie(){
     $bdd = createCursor();
-    $userNormie = $bdd->query('SELECT firstname, lastname, email FROM users WHERE account_type = "NORMIE"');
+    $userNormie = $bdd->query('SELECT id, firstname, lastname, email FROM users WHERE account_type = "NORMIE"');
     return $userNormie;
   }
 
@@ -106,7 +106,7 @@
     // FAIRE EN SORTE DE SELECTIONNER ID_BADGE POUR EDITER +/-
   function editBadge($badge_id, $name, $description, $shape, $color){
     $bdd = createCursor();
-    $req = $bdd->prepare('UPDATE badges SET name = ?, description = ?, shape = ?, color = ? WHERE id_badge = ?');
+    $req = $bdd->prepare('UPDATE badges SET name = ?, description = ?, shape = ?, color = ? WHERE id_badge =:id_badge');
     $req->execute([
       $name,
       $description,
@@ -114,16 +114,14 @@
       $color,
       $badge_id
     ]);
-    
-
+  
   }
 
-  function removeBadge($badge_id){
+  function removeBadge(){
     $bdd=createCursor();
-    $req = $bdd->prepare('DELETE FROM badges WHERE id_badge = ?');
-    $req->execute([
-      $badge_id,
-    ]);
+    $req = $bdd->prepare('DELETE FROM badges WHERE id_badge =:id_badge');
+    $req->bindValue(':id_badge', $_GET['id_badge']);
+    $req->execute();
     
   }
 

@@ -2,10 +2,11 @@
     require_once('functions.php');
     
       
-if(isset($_POST['badge_id'], $_POST['user_id'])){
-    grantBadgeToUser($_POST['badge_id'], $_POST['user_id']);
-        header("Location: ../?p=badges");
+if(isset($_POST['user_id'], $_POST['badge_id'])){
+    grantBadgeToUser($_POST['user_id'], $_POST['badge_id']);
+        header("Location: ../?p=dashboard&godjob");
     }
+    
     
     exit(); // pour sortir du script php
 ?>
