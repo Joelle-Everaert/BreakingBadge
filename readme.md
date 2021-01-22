@@ -59,10 +59,6 @@ The team worked on linking a PHPMyAdmin database composed of 3 tables to our web
 When entering the login page, the user can only login with an existing account created by an admin.
 
 
-Here is a screenshot of the database and the structure of its tables : ! Database screenshot](includes/media/bdd.png)
-
-***Important! *** There is also the possibility to login to our website as Admin. Admins do not have to go through the checkout process like students do, and they can also view the entry and exit history of any student of their choice.
-
 What did we learn from this experience:
 
 
@@ -82,7 +78,7 @@ It should be mentioned that this project also refreshed some concepts we have al
 Problems encountered:
 During the first couple of days, we encountered major problems with PHP. But with the help of our colleagues, we succedeed on creating and implementing PHP functions. 
 
-Within day 3 of the project, we attempted merging branches on github, but after merging the back-end and the front-end branches, the CSS was not responding properly on all the 
+Within day 4 of the project, we attempted merging branches on github, but after merging the back-end and the front-end branches, the CSS was not responding properly on all the 
 screens, depending on who's screen we were streaming the website from at the time.
 
 In conclusion, it was the biggest project we had to do. Thanks to the "mybocuse" project, we were ready for it though. 
@@ -92,7 +88,5 @@ Conclusion
 We created Breaking_Badge, a functional, integrated, full-stack prototype for granting badges to users. 
 
 Thank you for reading this readme and giving us feedback on the project 👊
-
-[^1]:Fair use disclaimer, this website is for educational purpose only.
 
 
