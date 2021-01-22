@@ -11,6 +11,14 @@
    phpAlerte('Your badge is encoded');
  }
 
+ if(isset($_GET['Great'])){
+   phpAlerte('Your badge is deleted');
+ }
+
+ if(isset($_GET['godjob'])){
+   phpAlerte('The badge is attribued');
+ }
+
   $requestedPage = 'dashboard';
 
   if(!empty($_GET['p'])){

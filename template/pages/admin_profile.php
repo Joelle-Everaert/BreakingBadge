@@ -4,11 +4,8 @@
 include_once('components/functions.php');
 session_start_once();
 
-
-
-
 $displayUsers = getUserNormie();
-$displayBadges=displayUserBadge();
+$displayBadges = displayUserBadge();
 ?>
 
 <!---------------------------------- All user ------------------------------------------->
