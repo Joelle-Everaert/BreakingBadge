@@ -4,11 +4,8 @@
 include_once('components/functions.php');
 session_start_once();
 
-
-
-
 $displayUsers = getUserNormie();
-$displayBadges=displayUserBadge();
+$displayBadges = displayUserBadge();
 ?>
 
 <!---------------------------------- All user ------------------------------------------->
@@ -22,14 +19,14 @@ $displayBadges=displayUserBadge();
             <table class=" table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">First</th> 
+                        <th scope="col">First</th>
                         <th scope="col">Last</th>
                         <th scope="col">Email</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                <?php
+                    <?php
                 foreach($displayUsers as $user){
                     echo '<tr> <td>'.$user['firstname'] . "</td><td>" .$user['lastname'] . "</td><td>" . $user['email'] . '</td></tr>';
                 }
@@ -39,16 +36,28 @@ $displayBadges=displayUserBadge();
             </table>
 
         </div>
-        <!-- -------------------bouton addUser------------------- -->
+        <!-- ------------------- bouton addUser + Modal ------------------- -->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
-            <button type="submit" name="out" class="btn_addUsers  btn  btn-dark"><a
-                    href="#####">Add
-                    users
-                    <i class="fas fa-user-plus"></i></a> </button>
+            <button type="button" name="addUser" class="btn_addUsers btn btn-dark" data-toggle="modal"
+                data-target="#signupModal">Add users
+
+                <i class="fas fa-user-plus"></i></button>
         </form>
     </div>
 
-
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php include('./pages/addUser.php')?>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!---------------------------------- Barre_vertical ------------------------------------------->
 
@@ -77,15 +86,34 @@ $displayBadges=displayUserBadge();
                         echo '<tr><td>'.$value['firstname'] . ' </td><td>' . $value['name'] . '</td></tr>';
                     }
                     ?>
-                    
+
                 </tbody>
             </table>
 
         </div>
-        <!-- ------------BOUTON ADD BADGE---------- -->
+        
+        <!---------------------------------------BOUTON + Modal Add Badge To User---------------------------------------------->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
-            <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn  btn-dark"><a href="
-                    ?p=addBadge"> ADD NEW BADGE</a>
-            </button>
+            <button type="button" name="addBadgeToUser" class="btn_addUsers btn btn-dark" data-toggle="modal"
+                data-target="#addBadgeToUser">Add Badge To User
+
+                <i class="fas fa-user-plus"></i></button>
         </form>
     </div>
+
+    <div class="modal fade" id="addBadgeToUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add badge to user</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php include('./pages/addBadgeToUser.php')?>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+            

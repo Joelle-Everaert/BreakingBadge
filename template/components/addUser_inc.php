@@ -6,5 +6,6 @@ if(isset($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['passw
     header("Location: ../?p=dashboard");
 }
 
-exit(); // pour sortir du script php
+exit();  //pour sortir du script php
 ?>
+

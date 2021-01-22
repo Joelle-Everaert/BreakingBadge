@@ -20,11 +20,11 @@
                 </div>
             </div>
         </div>
-        <!-- DOUBLE NAME FORMULAIRE -->
+        
         <div class="form-row">
         <div class="col-md-6 mb-3">
                 <label for="validationCustom03" class="Titleofthelabels">Badge Shape</label>
-                <select class="custom-select" name="shape" id="inputGroupSelect02">
+                <select class="custom-select" class="shape" name="shape" id="inputGroupSelect02">
                     <option selected>Chose the shape of your badge</option>
                     <option class="circle" value="circle">Circle</option>
                     <option class="square" value="square">Square</option>
@@ -36,17 +36,14 @@
                 </div>
             </div>
             <div class="col-md-6 mb-3">
-                <label for="validationCustom02" class="Titleofthelabels">Badge Color</label>
+                <label for="validationCustom02" class="color" class="Titleofthelabels">Badge Color</label>
                 <input type="color" class="form-control" name="color" id="validationCustom02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
         </div>
-
-
-
-
+        
         <button class="btn btn-light" type="submit">Submit form</button>
 
     </form>

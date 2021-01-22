@@ -10,9 +10,9 @@ if(!empty($_POST['email'])){
 
  
     <section class="Form my-4 mx-5">
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-lg-5">
+      <div class="loginContainer container-fluid">
+        <div class="loginSection row no-gutters">
+          <div class="d-none d-lg-block col-lg-5">
             <img src="./assets/img/login.jpg" class="img-fluid" alt="">
           </div>
 

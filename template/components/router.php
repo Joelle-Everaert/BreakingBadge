@@ -5,10 +5,18 @@
   // $routes['dashboard'] = 'Dashboard';
   // $routes['badges'] = 'All badges';
   // $routes['logout'] = 'log out';
-  $routes['addUser'] = 'USERNEW';
+  //==> $routes['addUser'] = 'USERNEW';
   
  if(isset($_GET['Success'])){
    phpAlerte('Your badge is encoded');
+ }
+
+ if(isset($_GET['Great'])){
+   phpAlerte('Your badge is deleted');
+ }
+
+ if(isset($_GET['godjob'])){
+   phpAlerte('The badge is attribued');
  }
 
   $requestedPage = 'dashboard';
