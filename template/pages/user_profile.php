@@ -6,18 +6,18 @@
         
     $displayYourBadge = displayYourBadge($_SESSION['user_id']);
 ?>
-    <div class="row mx-auto">
+    <div class="row mx-auto d-flex justify-content-between">
         <div class="animationSpawn col-lg-5 mb-5">
 
             <h2 class="titre_h2 text-center">Information</h2>
 
             <div class="cadre info container py-5">
-                <div class="row mx-auto">
-                    <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="./assets/img/joker.jpg" width="250" height="300" alt="">
+                <div class="row mx-auto d-flex">
+                    <div class="col-12 col-md-5"><img style="border-radius: 3%;" src="./assets/img/joker.jpg" width="200" height="250" alt="">
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="col-lg-2"> <h3>Lastname:</h3>  <p class="p_profile"><?= $_SESSION['lastname'] ?></p> </div>
-                        <div class="col-lg-2 mt-5"> <h3>Firstname:</h3> <p  class="p_profile"><?= $_SESSION['firstname'] ?></p>  </div>
+                        <div class="col-lg-2"> <h3>Name:</h3>  <p class="p_profile"><?= $_SESSION['lastname'] ?></p> </div>
+                        <div class="col-lg-2 mt-5"> <h3>Surname:</h3> <p  class="p_profile"><?= $_SESSION['firstname'] ?></p>  </div>
                         <div class="col-lg-2 mt-5"> <h3>Email:</h3> <p  class="p_profile"><?= $_SESSION['email'] ?></p> </div>
                     </div>
 
@@ -26,15 +26,10 @@
             </div>
         </div>
 
-        <!---------------------------------- Barre_vertical ------------------------------------------->
-
-        <div class="d-none d-lg-block col-lg-2">
-            <h2 class="barre_vertical text-center"></h2>
-        </div>
 
         <!---------------------------------- Acquired badge ------------------------------------------->
 
-        <div class="animationSpawn col-12 col-xl-5">
+        <div class="animationSpawn col-lg-5 mb-5">
 
             <h2 class="titre_h2 text-center">Acquired badge</h2>
 

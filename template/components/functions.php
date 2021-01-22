@@ -160,10 +160,9 @@
   }
 
   function removeBadgeFromUser($badge_id, $user_id){
-
+   
   }
-
-
+  
   function phpAlerte($msg){
     echo'<script type="text/javascript">alert("'.$msg.'")</script>';
   }

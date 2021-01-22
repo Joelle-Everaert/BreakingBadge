@@ -67,7 +67,7 @@ $displayBadges = displayUserBadge();
 
     <!---------------------------------- Liste badge ------------------------------------------->
 
-    <div class="animationSpawn col-12 col-xl-5">
+    <div class="animationSpawn col-lg-5 mb-5">
 
         <h2 class="titre_h2 text-center">User's badges</h2>
 
