@@ -129,7 +129,7 @@
                 <h1>Progression Badge</h1>
 
                 <div class="progress mb-5">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated  bg-dark" style="width:<?php echo "50"; ?>%"></div>      
+                    <div class="progress-bar progress-bar-striped progress-bar-animated  bg-dark" style="width:<?php echo "70"; ?>%"></div>      
                 </div>
             </div>
         </footer>

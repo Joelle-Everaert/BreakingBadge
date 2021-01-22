@@ -97,7 +97,7 @@ $displayBadges=displayUserBadge();
         <!-- ------------BOUTON ADD BADGE---------- -->
         <form class="form-inline mt-5 justify-content-lg-center justify-content-sm-center">
             <button type="submit" name="out" value="Deconnexion" class="btn_addUsers  btn btn-dark"><a href="
-                    ?p=addBadge"> ADD NEW BADGE<i class="fas fa-calendar-plus"></i></a>
+                    ?p=addBadge"> ADD NEW BADGE<i class="icon fas fa-calendar-plus"></i></a>
             </button>
         </form>
     </div>
